@@ -22,5 +22,8 @@ module SafeHealthy
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.autoload_paths += Dir[ Rails.root.join('lib').to_s ]
+    config.autoload_paths += Dir[ Rails.root.join('lib', '**').to_s ]
   end
 end
